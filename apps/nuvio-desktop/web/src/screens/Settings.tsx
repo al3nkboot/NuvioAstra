@@ -203,10 +203,11 @@ export function Settings() {
             data-testid="ui-language"
             aria-label={t("settings.language")}
             value={language}
-            onChange={(e) => setLanguage(e.target.value === "pt" ? "pt" : "en")}
+            onChange={(e) => setLanguage(e.target.value === "pt" ? "pt" : e.target.value === "ar" ? "ar" : "en")}
           >
             <option value="en">English</option>
             <option value="pt">Português</option>
+            <option value="ar">العربية</option>
           </select>
         </label>
         {SECTIONS.map((s) => (

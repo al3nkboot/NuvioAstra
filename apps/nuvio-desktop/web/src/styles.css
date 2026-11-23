@@ -842,7 +842,22 @@ img { -webkit-user-drag: none; }
 .settings-nav .nav-item.active::before {
   content: ""; position: absolute; left: 0; top: 9px; bottom: 9px; width: 3px; border-radius: 0 3px 3px 0; background: #2fe7f2;
 }
-.settings-nav .nav-icon, .settings-nav .nav-icon > svg { width: 20px; height: 20px; filter: none; transform: none; }
-.settings-nav .nav-item .nav-icon { color: #7f8aa0; }
-.settings-nav .nav-item:hover .nav-icon { color: #c9d3e3; }
-.settings-nav .nav-item.active .nav-icon { color: #2fe7f2; }
+/* ---- Right-to-left layout (Arabic UI) ---- */
+html[dir="rtl"] .sidebar { border-right: 0; border-left: 1px solid rgba(63, 147, 220, .18); }
+html[dir="rtl"] .settings-nav { border-right: 0; border-left: 1px solid var(--line); }
+html[dir="rtl"] .settings-nav .nav-item.active::before { left: auto; right: 0; border-radius: 3px 0 0 3px; }
+html[dir="rtl"] .row-header { padding-right: 0; padding-left: 32px; }
+html[dir="rtl"] .channel-main, html[dir="rtl"] .cw-card, html[dir="rtl"] .history-open,
+html[dir="rtl"] button.profile-chip, html[dir="rtl"] .episode { text-align: right; }
+html[dir="rtl"] .slider output { text-align: left; }
+html[dir="rtl"] .sync-table th, html[dir="rtl"] .sync-table td { text-align: right; }
+html[dir="rtl"] .sync-table th[scope="row"], html[dir="rtl"] .sync-table thead th:first-child { text-align: right; }
+html[dir="rtl"] .livetv-preview { padding: 10px 12px 24px 24px; }
+html[dir="rtl"] .player-status { left: auto; right: 14px; }
+html[dir="rtl"] .badge { left: auto; right: 12px; }
+html[dir="rtl"] .subtitle-preview span { left: 50%; }
+/* Profile menu must sit next to the sidebar (right in RTL). */
+html[dir="rtl"] .profile-menu { left: auto; right: 86px; }
+html[dir="rtl"] .profile-option { text-align: right; }
+html[dir="rtl"] .addon-picker-menu { right: auto; left: 0; }
+html[dir="rtl"] .chip-viewport::before { left: auto; right: 0; transform: scaleX(-1); }
